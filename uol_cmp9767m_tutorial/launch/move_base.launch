@@ -5,9 +5,15 @@
 	<arg name="robot_name" default="thorvald_001"/>
         <arg name="tf_prefix" default="$(arg robot_name)/"/>
 	<arg name="map_file" default="$(find uol_cmp9767m_base)maps/cropped.yaml"/>
+	<arg name="nogo_map_file" default="$(find uol_cmp9767m_tutorial)maps/cropped_nogo.yaml"/>
 
 	<!-- map server -->
 	<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
+
+       <!-- nogo map server -->
+       <node name="nogo_map_server" pkg="map_server" type="map_server" args="$(arg nogo_map_file)">
+         <remap from="map" to="nogo_map" />
+       </node>
 
 	<!-- localization -->
 	<node name="fake_localization" pkg="fake_localization" type="fake_localization">

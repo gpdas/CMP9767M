@@ -8,6 +8,7 @@ local_costmap:
   resolution: 0.04
 
   plugins:
+    - {name: nogo_map_layer, type: "costmap_2d::StaticLayer"}
     - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
     - {name: local_inflation_layer, type: "costmap_2d::InflationLayer"}
 

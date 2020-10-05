@@ -1,10 +1,13 @@
-global_frame: /map
+global_frame: map
 robot_base_frame: thorvald_001/base_link
 
 footprint: [[0.67, 0.64], [0.67, -0.64], [-0.67, -0.64], [-0.67, 0.64]]
 
 map_layer:
   map_topic: /map
+
+nogo_map_layer:
+  map_topic: /nogo_map
 
 global_inflation_layer:
   inflation_radius: 0.7
